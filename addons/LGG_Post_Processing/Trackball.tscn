@@ -1,0 +1,281 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/LGG_Post_Processing/coso.png" type="Texture" id=1]
+[ext_resource path="res://addons/LGG_Post_Processing/trackball_edit.png" type="Texture" id=2]
+[ext_resource path="res://addons/LGG_Post_Processing/Trackball.gd" type="Script" id=3]
+[ext_resource path="res://addons/LGG_Post_Processing/PointTrackball.gd" type="Script" id=4]
+[ext_resource path="res://addons/LGG_Post_Processing/rgb_textvalue.gd" type="Script" id=5]
+[ext_resource path="res://addons/LGG_Post_Processing/redo-pressed.png" type="Texture" id=6]
+[ext_resource path="res://addons/LGG_Post_Processing/redo-normal.png" type="Texture" id=7]
+[ext_resource path="res://addons/LGG_Post_Processing/values.png" type="Texture" id=8]
+[ext_resource path="res://addons/LGG_Post_Processing/value_rect.gd" type="Script" id=9]
+
+[node name="TrackBall" type="Control"]
+margin_right = 265.0
+margin_bottom = 274.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 241.947, 273.048 ],
+"_edit_use_anchors_": false
+}
+
+[node name="texture_trackball" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -115.0
+margin_right = 100.0
+margin_bottom = 85.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="texture_trackball"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -12.5
+margin_right = 12.5
+margin_bottom = 12.5
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = -32.0
+margin_right = -24.0
+margin_bottom = -12.0
+rect_min_size = Vector2( 199, 20 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center_r" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 43.0
+margin_right = 83.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 20 )
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Center_r"]
+margin_right = 40.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 20 )
+color = Color( 0.133333, 0.137255, 0.211765, 1 )
+
+[node name="R_text" type="Label" parent="HBoxContainer/Center_r"]
+margin_left = 10.0
+margin_top = 3.0
+margin_right = 30.0
+margin_bottom = 17.0
+text = "0.0"
+script = ExtResource( 5 )
+
+[node name="Center_g" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 87.0
+margin_right = 127.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 20 )
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Center_g"]
+margin_right = 40.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 20 )
+color = Color( 0.133333, 0.137255, 0.211765, 1 )
+
+[node name="G_text" type="Label" parent="HBoxContainer/Center_g"]
+margin_left = 10.0
+margin_top = 3.0
+margin_right = 30.0
+margin_bottom = 17.0
+text = "0.0"
+script = ExtResource( 5 )
+
+[node name="Center_b" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 131.0
+margin_right = 171.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 20 )
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Center_b"]
+margin_right = 40.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 20 )
+color = Color( 0.133333, 0.137255, 0.211765, 1 )
+
+[node name="B_text" type="Label" parent="HBoxContainer/Center_b"]
+margin_left = 10.0
+margin_top = 3.0
+margin_right = 30.0
+margin_bottom = 17.0
+text = "0.0"
+script = ExtResource( 5 )
+
+[node name="R" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 86.0
+margin_top = -12.0
+margin_right = 94.0
+margin_bottom = 2.0
+custom_colors/font_color = Color( 0.815686, 0.0196078, 0.0196078, 1 )
+text = "R"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="G" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.99999
+margin_top = -12.0
+margin_right = 6.0
+margin_bottom = 2.0
+custom_colors/font_color = Color( 0.133333, 0.772549, 0.156863, 1 )
+text = "G"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -91.0
+margin_top = -12.0
+margin_right = -82.0
+margin_bottom = 2.0
+custom_colors/font_color = Color( 0.121569, 0.168627, 0.901961, 1 )
+text = "B"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -28.0
+margin_right = 28.0
+margin_bottom = 14.0
+text = "TrackBall"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0
+margin_top = 88.0
+margin_right = 30.0
+margin_bottom = 102.0
+text = "-----"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestoreButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -20.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gradient_value" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -2.0
+margin_top = -107.0
+margin_right = 10.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 12, 200 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSlider" type="VSlider" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -112.0
+margin_right = -4.0
+margin_bottom = 99.0
+value = 50.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="value_rect" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -32.0
+margin_right = 16.0
+margin_bottom = -12.0
+color = Color( 0.133333, 0.137255, 0.211765, 1 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="value_text" type="Label" parent="value_rect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 14.0
+text = "50"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -23.0
+margin_top = -12.5
+margin_right = 17.0
+margin_bottom = 1.5
+text = "Value"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="texture_trackball/TextureRect" to="texture_trackball/TextureRect" method="_on_TextureRect_gui_input"]
+[connection signal="pressed" from="RestoreButton" to="." method="_on_RestoreButton_pressed"]
+[connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
